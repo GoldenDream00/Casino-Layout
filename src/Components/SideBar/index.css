@@ -1,0 +1,93 @@
+.drawer {
+    width: 260px;
+    transform: none;
+
+    position: fixed;
+    z-index: 201;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #1C1E22;
+    padding: 10px;
+}
+
+.drawer::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 0.75rem;
+    height: 100%;
+    pointer-events: none;
+    background-image: linear-gradient(to right, #111415, rgba(17, 20, 21, 0));
+    opacity: .3;
+}
+
+.top-banner {
+    height: 64px;
+    position: relative;
+    background-color: #1c1e22;
+}
+.top-banner p {
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+}
+.top-banner::after {
+    content: " ";
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 12px;
+    background-image: linear-gradient(to bottom,#111415,rgba(17,20,21,0));
+    opacity: .2;
+}
+
+.toggle {
+    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+    background-color: #24262b;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.is-toggle {
+    width: 60px;
+}
+.is-toggle .logo {
+    display: none;
+}
+
+.drawer .close {
+    display: none;
+    position: absolute;
+    width: 20px;
+    right: 15px;
+    top: 15px;
+    font-size: 15px!important;
+}
+
+@media (max-width: 600px) {
+    .drawer.is-toggle {
+        width: 0px!important;
+        padding: 0px!important;
+    }
+    .drawer {
+        width: 100vw!important;
+    }
+    .toggle {
+        display: none;
+    }
+
+    .top-banner::after {
+        content: none!important;
+    }
+    .drawer::after {
+        content: none!important;
+    }
+    .drawer .close {
+        display: block;
+    }
+}
